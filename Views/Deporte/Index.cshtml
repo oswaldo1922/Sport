@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SportBarca.Models.Deporte>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDeporte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDeporte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEvento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDeporte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDeporte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdDeporte }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdDeporte  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IdDeporte })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

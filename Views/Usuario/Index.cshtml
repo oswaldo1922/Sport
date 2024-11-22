@@ -1,0 +1,102 @@
+﻿@model IEnumerable<SportBarca.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contrasena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colonia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoPostal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoInterior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoExterior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdInscripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdLogro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contrasena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colonia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoPostal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoInterior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoExterior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdInscripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdLogro)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdUsuario  }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdUsuario  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IdUsuario  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

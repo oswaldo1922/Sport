@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SportBarca.Models.Logro>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdLogro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaLogro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdLogro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaLogro)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdLogro  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.IdLogro  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IdLogro  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
